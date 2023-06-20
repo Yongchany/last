@@ -35,7 +35,7 @@ public class BookController {
 
     @PostMapping("/register")
     public String registerPost(BookDTO dto, RedirectAttributes redirectAttributes){
-        log.info("등록처이 후 목록페이지 리다이렉트");
+        log.info("등록처리 후 목록페이지 리다이렉트");
         bookService.register(dto);
         redirectAttributes.addFlashAttribute("msg", dto.getGno());
         return "redirect:/book/list";
